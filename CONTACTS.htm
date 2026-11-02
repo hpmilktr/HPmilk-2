@@ -106,6 +106,72 @@ body[data-hp-page="contact"] .hp-bottom-region{margin-top:auto!important;}
 (function(){function setLabel(){var el=document.getElementById('hp-contact-form-label');if(!el)return;var l='en';try{l=localStorage.getItem('hpmilk_lang')||'en'}catch(e){}el.textContent=({en:'Send a message',tr:'Mesaj gönder',ar:'إرسال رسالة',fa:'ارسال پیام'})[l]||'Send a message';}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setLabel);else setLabel();})();
 </script>
+
+<style id="hp-contact-footer-style-match-welcome">
+/* Match the Welcome page footer typography and colors */
+.hp-bottom-region a.ema {
+  display: inline-block !important;
+  color: #ffd700 !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+  margin-right: 35px !important;
+  transform: translateY(-7px) !important;
+}
+.hp-bottom-region a.ema:hover {
+  color: #7de3ff !important;
+}
+.hp-bottom-region td.ADD[width="100%"] {
+  padding-left: 30px !important;
+}
+.hp-bottom-region td.ADD[width="100%"] font {
+  display: inline-block !important;
+  color: #FFD700 !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  transform: translateY(-5px) !important;
+}
+.hp-bottom-region td.ADD:not([width="100%"]) > a:not(.ema) {
+  color: #ffd700 !important;
+  font-size: 11px !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+}
+@media (max-width: 700px) {
+  .hp-bottom-region {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  .hp-bottom-region table {
+    width: 100% !important;
+    table-layout: fixed !important;
+  }
+  .hp-bottom-region tr > td:first-child,
+  .hp-bottom-region tr > td:last-child {
+    width: 1px !important;
+    padding: 0 !important;
+  }
+  .hp-bottom-region td.ADD[width="100%"] {
+    width: 55% !important;
+    padding-left: 10px !important;
+  }
+  .hp-bottom-region td.ADD:not([width="100%"]) {
+    width: 45% !important;
+    padding-right: 10px !important;
+    text-align: right !important;
+    white-space: normal !important;
+  }
+  .hp-bottom-region td.ADD:not([width="100%"]) a {
+    font-size: 13px !important;
+  }
+  .hp-bottom-region a.ema {
+    margin-right: 0 !important;
+    font-size: 13px !important;
+    overflow-wrap: anywhere !important;
+  }
+}
+</style>
+
 </head><body data-hp-page="contact">
 <div class="hp-top-region">
 <table align="center" background="CONTACTS_files/top_files/top_backgrnd.gif" border="0" cellpadding="0" cellspacing="0" valign="TOP" width="100%">
@@ -157,7 +223,6 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <font color="#ffffff" face="Verdana" size="1">MILKING MACHINES &amp; SPARE PARTS</font><font color="#ffffff" size="1"><span style="FONT-FAMILY: Verdana">
 </span></font></td>
 <td align="right" class="ADD" nowrap="" valign="top"><img alt="" border="0" height="17" src="CONTACTS_files/bottom_files/spacer.gif" width="1"/><br/>
-<a href="mailto:hpmilk.tr@gmail.com">Email: </a>
 <a class="ema" href="mailto:hpmilk.tr@gmail.com">hpmilk.tr@gmail.com</a><br/><img alt="" border="0" height="15" src="CONTACTS_files/bottom_files/spacer.gif" width="1"/><br/> </td>
 <td><img alt="" border="0" height="1" src="CONTACTS_files/bottom_files/spacer.gif" width="3"/></td></tr></tbody></table></div>
 <link rel="stylesheet" href="hp-shop.css"><script defer src="hp-shop.js"></script><link rel="stylesheet" href="hp-language.css"><script defer src="hp-language.js"></script></body></html>
