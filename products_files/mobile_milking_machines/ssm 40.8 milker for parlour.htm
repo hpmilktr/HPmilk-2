@@ -735,6 +735,25 @@ html body input.qnumber {
  window.addEventListener('pageshow',fix);
 })();
 </script>
+<script id="hp-detail-german-translation">
+(function(){
+ try{
+  if(localStorage.getItem('hpmilk_lang')!=='de') return;
+  var map={"one milker machine with one bucket": "Eine Melkmaschine mit einem Behälter", "Double milker machine with one bucket": "Doppelmelkmaschine mit einem Behälter", "Milker for Parlour including 2 Penumatic pulsators and one bucket": "Melkmaschine für Melkstände, einschließlich 2 pneumatischer Pulsatoren und eines Behälters", "Elecrtic & Petrol milker machine With Electric Honda motor 5.5 HP": "Elektrische und benzinbetriebene Melkmaschine mit Honda-Elektromotor, 5,5 PS", "Vacuum pump & Air tube for Parlour milking machines": "Vakuumpumpe und Luftleitung für Melkstand-Melkmaschinen", "Double milker machine with double buckets": "Doppelmelkmaschine mit zwei Behältern", "Add Product 1 to Cart": "Produkt 1 in den Warenkorb", "Add Product 2 to Cart": "Produkt 2 in den Warenkorb", "Add Product 3 to Cart": "Produkt 3 in den Warenkorb", "Add Product 5 to Cart": "Produkt 5 in den Warenkorb", "Add Product 6 to Cart": "Produkt 6 in den Warenkorb", "Add Product 7 to Cart": "Produkt 7 in den Warenkorb", "Shopping Cart": "Warenkorb"};
+  var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT),nodes=[],n;
+  while(n=walker.nextNode()) nodes.push(n);
+  nodes.forEach(function(node){
+   var raw=node.nodeValue,trim=raw.trim();
+   if(map[trim]) node.nodeValue=raw.replace(trim,map[trim]);
+  });
+  document.documentElement.lang='de';
+  document.querySelectorAll('button,[aria-label]').forEach(function(el){
+   var a=el.getAttribute('aria-label'); if(a==='Close')el.setAttribute('aria-label','Schließen');
+   if(el.title==='Close')el.title='Schließen';
+  });
+ }catch(e){}
+})();
+</script>
 </body>
 
 </html>
