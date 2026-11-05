@@ -1,4 +1,5 @@
 (function(){'use strict';
+const HP_LANG_SCRIPT_URL=(document.currentScript&&document.currentScript.src)||new URL('hp-language.js',location.href).href;
 /* Position selector under HPmilk brand, never float over the logo. */
 function hpPlacePickerUnderLogo(wrap){
  if(!wrap) return;
@@ -56,7 +57,7 @@ function applyStatic(){applyBlocks();document.documentElement.lang=current;docum
  document.querySelectorAll('#hp-mobile-nav a').forEach((a,i)=>{const labels=['Home','Products','Shopping Cart','Contact','About us'];const span=a.querySelector('span');if(span&&labels[i])span.textContent=translate(labels[i])});
  const cart=document.getElementById('hp-desktop-cart');if(cart){let total=cart.querySelector('.hp-bubble');const n=total?total.textContent:'';cart.textContent=translate('🛒 Shopping Cart')+' (';if(total)cart.appendChild(total);cart.append(')')}
 }
-function flag(lang){let img=document.createElement('img');let base=location.href.indexOf('_files/top.htm')>-1?'../hp-flags/':'hp-flags/';img.src=base+lang+'.svg';img.width=24;img.height=16;img.alt='';img.className='hp-flag';return img}
+function flag(lang){let img=document.createElement('img');img.src=new URL('hp-flags/'+lang+'.svg',HP_LANG_SCRIPT_URL).href;img.width=28;img.height=18;img.alt=LANGS[lang]||lang;img.className='hp-flag';img.onerror=function(){this.style.display='none'};return img}
 function setLanguage(lang){
  if(!LANGS[lang])return;
  // A header inside an iframe must ask the parent to change language too.
